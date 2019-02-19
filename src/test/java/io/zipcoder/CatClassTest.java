@@ -7,7 +7,7 @@ import org.junit.Assert;
 public class CatClassTest {
 
     @Test
-    public void CatConstructionWithNoInput(){
+    public void catConstructionWithNoInput(){
         PetOwner expectedOwner = null;
         String expectedName = "Kitty Galore";
         Integer expectedAge = 0;
@@ -25,7 +25,7 @@ public class CatClassTest {
     }
 
     @Test
-    public void CatConstructionWithNameOnly(){
+    public void catConstructionWithNameOnly(){
         // Given
         String expectedName = "Fifi";
         Integer expectedAge = 0;
@@ -42,7 +42,7 @@ public class CatClassTest {
     }
 
     @Test
-    public void CatConstructionWithNameOwner(){
+    public void catConstructionWithNameOwner(){
         // Given
         String expectedName = "Carlsburger";
         PetOwner expectedOwner = new PetOwner("Carrie");
@@ -59,7 +59,7 @@ public class CatClassTest {
     }
 
     @Test
-    public void CatConstructionWithNameAgeOwner(){
+    public void catConstructionWithNameAgeOwner(){
         PetOwner expectedOwner = new PetOwner("Harold");
         String expectedName = "Kumar";
         Integer expectedAge = 12;

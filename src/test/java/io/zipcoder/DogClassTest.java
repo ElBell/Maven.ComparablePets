@@ -6,7 +6,7 @@ import org.junit.Test;
 public class DogClassTest {
 
     @Test
-    public void DogConstructionWithNoInput(){
+    public void dogConstructionWithNoInput(){
         PetOwner expectedOwner = null;
         String expectedName = "Floofer";
         Integer expectedAge = 0;
@@ -24,7 +24,7 @@ public class DogClassTest {
     }
 
     @Test
-    public void DogConstructionWithNameOnly(){
+    public void dogConstructionWithNameOnly(){
         // Given
         String expectedName = "Wally";
         Integer expectedAge = 0;
@@ -41,7 +41,7 @@ public class DogClassTest {
     }
 
     @Test
-    public void DogConstructionWithNameOwner(){
+    public void dogConstructionWithNameOwner(){
         // Given
         String expectedName = "Fido";
         PetOwner expectedOwner = new PetOwner("Carrie");
@@ -58,7 +58,7 @@ public class DogClassTest {
     }
 
     @Test
-    public void DogConstructionWithNameAgeOwner(){
+    public void dogConstructionWithNameAgeOwner(){
         PetOwner expectedOwner = new PetOwner("Harold");
         String expectedName = "Chubs";
         Integer expectedAge = 5;
