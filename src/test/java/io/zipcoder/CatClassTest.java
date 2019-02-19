@@ -50,7 +50,7 @@ public class CatClassTest {
 
         // When
         String actualName = cat.getName();
-        Integer actualOwner = cat.getOwner();
+        PetOwner actualOwner = cat.getOwner();
 
         // Then
         Assert.assertEquals(expectedOwner, actualOwner);
@@ -127,57 +127,57 @@ public class CatClassTest {
         Assert.assertEquals(expectedSpeech, actualSpeech);
 
     }
-
-    @Test
-    public void sortBetweenSameTypePetsTestUsingComparable(){
-        //given
-        Cat cat1 = new Cat("Taboo", 3, new PetOwner());
-        Cat cat2 = new Cat("Calypso",6, new PetOwner());
-        Cat cat3 = new Cat("Pepper",1, null);
-        Pet[] expected = new Pet[]{cat2,cat3,cat1};
-        //when
-        Pet[] actual = Arrays.sort(new Pet[]{cat2,cat3,cat1};);
-        //then
-        Assert.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void sortBetweenSameTypePetsTestUsingComparator(){
-    //given
-        Cat cat1 = new Cat("Taboo", 3, new PetOwner());
-        Cat cat2 = new Cat("Calypso",6, new PetOwner());
-        Cat cat3 = new Cat("Pepper",1, null);
-        Pet[] expected = new Pet[]{cat2,cat3,cat1};
-        //when
-        Pet[] actual = Arrays.sort(new Pet[]{cat2,cat3,cat1};);
-        //then
-        Assert.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void sortBetweenDifferentTypePetsTestComparable(){
-        //given
-        Cat cat1 = new Cat("Taboo", 3, new PetOwner());
-        Dragon dragon = new Dragon("Balthazar",6, new PetOwner());
-        Dog dog = new Dog("Mipsy",1, null);
-        Pet[] expected = new Pet[]{dragon,dog,cat1};
-        //when
-        Pet[] actual = Arrays.sort(new Pet[]{cat1,dog, dragon};);
-        //then
-        Assert.assertEquals(expected,actual);
-
-    }
-
-    @Test
-    public void sortBetweenTwoDifferentTypePetsTestComparator(){
-        //given
-        Cat cat1 = new Cat("Taboo", 3, new PetOwner());
-        Dragon dragon = new Dragon("Balthazar",6, new PetOwner());
-        Dog dog = new Dog("Mipsy",1, null);
-        Pet[] expected = new Pet[]{cat1,dragon,dog};
-        //when
-        Pet[] actual = Arrays.sort(new Pet[]{cat1,dog, dragon};);
-        //then
-        Assert.assertEquals(expected,actual);
-    }
+//
+//    @Test
+//    public void sortBetweenSameTypePetsTestUsingComparable(){
+//        //given
+//        Cat cat1 = new Cat("Taboo", 3, new PetOwner());
+//        Cat cat2 = new Cat("Calypso",6, new PetOwner());
+//        Cat cat3 = new Cat("Pepper",1, null);
+//        Pet[] expected = new Pet[]{cat2,cat3,cat1};
+//        //when
+//        Pet[] actual = Arrays.sort(new Pet[]{cat2,cat3,cat1});
+//        //then
+//        Assert.assertEquals(expected,actual);
+//    }
+//
+//    @Test
+//    public void sortBetweenSameTypePetsTestUsingComparator(){
+//    //given
+//        Cat cat1 = new Cat("Taboo", 3, new PetOwner());
+//        Cat cat2 = new Cat("Calypso",6, new PetOwner());
+//        Cat cat3 = new Cat("Pepper",1, null);
+//        Pet[] expected = new Pet[]{cat2,cat3,cat1};
+//        //when
+//        Pet[] actual = Arrays.sort(new Pet[]{cat2,cat3,cat1});
+//        //then
+//        Assert.assertEquals(expected,actual);
+//    }
+//
+//    @Test
+//    public void sortBetweenDifferentTypePetsTestComparable(){
+//        //given
+//        Cat cat1 = new Cat("Taboo", 3, new PetOwner());
+//        Dragon dragon = new Dragon("Balthazar",6, new PetOwner());
+//        Dog dog = new Dog("Mipsy",1, null);
+//        Pet[] expected = new Pet[]{dragon,dog,cat1};
+//        //when
+//        Pet[] actual = Arrays.sort(new Pet[]{cat1,dog, dragon});
+//        //then
+//        Assert.assertEquals(expected,actual);
+//
+//    }
+//
+//    @Test
+//    public void sortBetweenTwoDifferentTypePetsTestComparator(){
+//        //given
+//        Cat cat1 = new Cat("Taboo", 3, new PetOwner());
+//        Dragon dragon = new Dragon("Balthazar",6, new PetOwner());
+//        Dog dog = new Dog("Mipsy",1, null);
+//        Pet[] expected = new Pet[]{cat1,dragon,dog};
+//        //when
+//        Pet[] actual = Arrays.sort(new Pet[]{cat1,dog, dragon});
+//        //then
+//        Assert.assertEquals(expected,actual);
+//    }
 }

@@ -3,6 +3,8 @@ package io.zipcoder;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Arrays;
+
 public class PetOwnerClassTest {
 
     @Test
@@ -25,10 +27,10 @@ public class PetOwnerClassTest {
         String expectedName = "Sleepy Hallow";
 
         // When
-        PetOwner petOwner = new PetOwner("expectedName");
+        PetOwner petOwner = new PetOwner(expectedName);
 
         // Then
-        Integer actualName = petOwner.getName();
+        String actualName = petOwner.getName();
         Assert.assertEquals(actualName, expectedName);
     }
 
@@ -49,11 +51,14 @@ public class PetOwnerClassTest {
     @Test
     public void addAndGetPetsTest() {
         // Given
+        Pet newCat = new Cat("Kitty Galore");
+        Pet newDragon = new Dragon("Blaze");
+        Pet newDog = new Dog("Jojo");
         PetOwner petOwner = new PetOwner("Darla");
-        petOwner.addPet(new Cat("Kitty Galore"));
-        petOwner.addPet(new Dragon("Blaze"));
-        petOwner.addPet(new Dog("Jojo"));
-        Pet[] expected = new Pet[]{new Cat("Kitty Galore"),(new Dragon("Blaze"),(new Dog("Jojo")};
+        petOwner.addPet(newCat);
+        petOwner.addPet(newDragon);
+        petOwner.addPet(newDog);
+        Pet[] expected = new Pet[]{newCat, newDragon, newDog};
 
         // When
         Pet[] actual = petOwner.getPets();
