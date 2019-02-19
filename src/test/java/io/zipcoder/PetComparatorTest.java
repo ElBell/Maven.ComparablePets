@@ -8,32 +8,45 @@ public class PetComparatorTest {
     @Test
     public void comparatorTest() {
         // Given
-        Pet[] testPets = new Pet[]{new Cat("Begin"), new Dog("First"), new Cat("First"), new Turtle("Start")};
+        Pet[] testPetList = new Pet[]{new Cat("Kitty Galore"),(new Dragon("Blaze"),(new Dog("Jojo"), Cat("Blaze", 3,null)};
         Comparator petComparator = new PetComparator();
+        Pet[] expected = new Pet[]{new Cat("Kitty Galore"),( new Cat("Blaze", 3,null)),(new Dragon("Blaze")),(new Dog("Jojo"))};
 
         // When
-        Pet[] actualPets = petComparator.comparatorSort(testPets);
-
+        Pet[] actual = petComparator.comparatorSort(testPetList);
 
         // Then
-        Pet[] expectedPets = new Pet[]{new Dog("First"), new Turtle("Start"), new Cat("First"), new Cat("First")};
-
-        Assert.assertEquals(expectedPets, actualPets);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
     public void comparatorTest2() {
-        // Given
-        Pet[] testPets = new Pet[]{new Cat("Laptop"), new Dog("Other"), new Turtle("Desktop"), new Turtle("Windows")};
+        Pet[] testPetList = new Pet[]{
+                new Cat("Kitty Galore"),
+                new Dragon("Blaze"),
+                new Dog("Jojo"),
+                new Cat("Blaze", 3,null),
+                new Cat("Taboo", 3, new PetOwner()),
+                new Dragon("Balthazar",6, new PetOwner()),
+                new Dog ("Mipsy",1, null),
+                new Cat("Fluffy")};
         Comparator petComparator = new PetComparator();
 
-        // When
-        Pet[] actualPets = petComparator.comparatorSort(testPets);
+        Pet[] expected = new Pet[]{
+                new Cat("Blaze", 3,null),
+                new Cat("Fluffy")
+                new Cat("Kitty Galore"),
+                new Cat("Taboo", 3, new PetOwner()),
+                new Dragon("Balthazar",6, new PetOwner()),
+                new Dragon("Blaze"),
+                new Dog("Jojo"),
+                new Dog ("Mipsy",1, null),
+                };
 
+        // When
+        Pet[] actual = petComparator.comparatorSort(testPetList);
 
         // Then
-        Pet[] expectedPets = new Pet[]{new Dog("Other"), new Turtle("Desktop"),  Turtle("Windows"), new Cat("Laptop")};
-
-        Assert.assertEquals(expectedPets, actualPets);
+        Assert.assertEquals(expected, actual);
     }
 }
