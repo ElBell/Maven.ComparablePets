@@ -75,19 +75,11 @@ public abstract class Pet implements Comparable<Pet>{
 
 
     public int compareTo(Pet pet) {
-        if (pet.getName().compareTo(name) > 0) {
-            return -2;
-        } else if (pet.getName().compareTo(name) < 0){
-            return 2;
-        } else {
-            if (pet.getType() < getType()) {
-                return 1;
-            } else if (pet.getType() > getType()){
-                return -1;
-            } else {
-                return 0;
-            }
+        int nameCompare = name.compareTo(pet.getName());
+        if(nameCompare == 0) {
+            return getType() - pet.getType();
         }
+        return nameCompare;
     }
 
 

@@ -41,12 +41,12 @@ public class PetComparatorTest {
 
         Pet[] testPetList = new Pet[]{test1, test2, test3, test4, test5, test6, test7};
         PetComparator petComparator = new PetComparator();
-
-        for (Pet pet: testPetList) {
-            System.out.print(pet.getType());
-            System.out.println(pet.getName());
-        }
-        System.out.println(" ");
+//
+//        for (Pet pet: testPetList) {
+//            System.out.print(pet.getType());
+//            System.out.println(pet.getName());
+//        }
+//        System.out.println(" ");
 
         Pet[] expected = new Pet[]{test4, test1, test5, test6, test2, test3, test7};
 
@@ -75,11 +75,6 @@ public class PetComparatorTest {
 
         List<Pet> testPetList = new ArrayList<Pet>(Arrays.asList(testPets));
 
-        for (Pet pet: testPets) {
-            System.out.print(pet.getType());
-            System.out.println(pet.getName());
-        }
-        System.out.println(" ");
 
         Pet[] expected = new Pet[]{test6, test4, test2, test3, test1, test7, test5};
 
